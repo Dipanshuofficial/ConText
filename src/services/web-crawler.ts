@@ -9,11 +9,10 @@ import * as cheerio from "cheerio";
  */
 export async function crawlWebpage(url: string): Promise<string> {
   try {
-    // Fetch webpage content with authentication
+    // Fetch webpage content
     const response = await axios.get(url, {
       headers: {
         "User-Agent": "Mozilla/5.0 (compatible; WebCrawler/1.0)",
-        Authorization: "Bearer YOUR_API_TOKEN", // Replace with actual token
       },
       timeout: 10000,
     });
@@ -29,11 +28,7 @@ export async function crawlWebpage(url: string): Promise<string> {
 
     return text.length > 0 ? text : `No meaningful content found at ${url}`;
   } catch (error) {
-    console.error(
-      `Error crawling ${url}:`,
-      error.response?.status,
-      error.response?.data
-    );
+    console.error(`Error crawling ${url}:`, error);
     return `Failed to crawl content from ${url}.`;
   }
 }

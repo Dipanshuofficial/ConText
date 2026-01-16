@@ -282,7 +282,7 @@ export function ContextualChatPopup() {
                 {/* Ensure it takes full height */}
                 <Bot size={48} className="mb-4 text-primary" />
                 <p className="text-sm">
-                  Ask me anything about this page or general questions!
+                  "What is this page about?" or "Tell me something about AI!"
                 </p>
               </div>
             )}
@@ -363,7 +363,7 @@ export function ContextualChatPopup() {
           <Input
             value={input}
             onChange={handleInputChange}
-            placeholder="Ask anything..."
+            placeholder="What's on this page?..."
             className="flex-1 bg-input border-input focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-0" // Refined focus style
             disabled={isLoading}
             aria-label="Chat message input"
